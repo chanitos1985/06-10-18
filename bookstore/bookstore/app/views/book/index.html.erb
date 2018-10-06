@@ -1,0 +1,17 @@
+
+<ul>
+<% for book in @books %>
+<li>
+    <%= book.title  %> | 
+    <a href="/libros/mostrar/<%= book.id %>">
+        Mostrar
+    </a>
+     | 
+     <a href="/libros/edit/<%= book.id %>">
+        Editar
+    </a>
+
+</li>
+<% end %>
+</ul>
+

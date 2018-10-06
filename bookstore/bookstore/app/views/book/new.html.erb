@@ -1,0 +1,28 @@
+<h3>Crear Libro</h3>
+<form method="post" action="<%= libros_crear_path %>">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div>
+        <label>Nombre</label>
+        <br>
+        <input type="text" placeholder="Ingrese nombre" name="book[title]">
+    </div>
+    <div>
+        <label>description</label>
+        <br>
+        <textarea name="book[description]"></textarea>
+    </div>
+    <div>
+      <label>Author</label>
+      <br>
+      <select name="book[author_id]">
+      <% for author in @authors%>
+      <option value="<%= author.id %>">
+        <%= author.name%>
+      </option>
+      <% end %>
+      </select>
+    </div> 
+    <div>
+        <button type="submit">Crear</button>
+    </div>
+</form>
